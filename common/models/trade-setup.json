@@ -1,0 +1,49 @@
+{
+  "name": "tradeSetup",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "Ticker": {
+      "type": "string"
+
+    },
+    "Date": {
+      "type": "date"
+
+    },
+    "LongTrend": {
+      "type": "string"
+    },
+    "LongTrendChart": {
+      "type": "any"
+    },
+    "MiddleTrend": {
+      "type": "string"
+    },
+    "MiddleTrendChart": {
+      "type": "any"
+    },
+    "ShortTrend": {
+      "type": "string"
+    },
+    "ShortTrendChart": {
+      "type": "any"
+    },
+    "FundamentalText": {
+      "type": "string"
+    },
+    "NearestFundamentalEventDate": {
+      "type": "date"
+    },
+    "NearestFundamentalEventName": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}
