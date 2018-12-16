@@ -1,0 +1,51 @@
+<div class="page-trade-setup " *ngIf="tradeSetup">
+  <form [formGroup]="TradeSetupForm">
+  <div class="contaner-fluid">
+      <div *ngIf="!isEdited; then: Ticker; else: TickerForm"></div>
+      <ng-template #Ticker>
+          <div class="col-sm-6">{{ tradeSetup.Ticker }}</div>
+        </ng-template>
+        <ng-template #TickerForm>
+          <div class="col-sm-6">
+            <app-form-edit-input (saved$)="save()" (canceled$)="editCancel()" [group]="TradeSetupForm" [ctrlName]="Ticker"></app-form-edit-input>
+          </div>
+        </ng-template>
+        <h1>{{ tradeSetup.Ticker }}</h1>
+
+    <button (click)="edit()">Edit</button>
+
+    <div class="row">
+      <h3>Long Trend</h3>
+      <div class="col-sm-6"></div>
+      <div *ngIf="!isEdited; then: LongTrend; else: LongTrendForm"></div>
+      <ng-template #LongTrend>
+        <div class="col-sm-6">{{ tradeSetup.LongTrend }}</div>
+      </ng-template>
+      <ng-template #LongTrendForm>
+        <div class="col-sm-6">
+            <div class="col-sm-6">
+                <app-form-edit-textarea (saved$)="save()" (canceled$)="editCancel()" [group]="TradeSetupForm" [ctrlName]="LongTrend"></app-form-edit-textarea>
+              </div>
+        </div>
+      </ng-template>
+    </div>
+    <div class="row">
+      <h3>Middle Trend</h3>
+      <div class="col-sm-6"></div>
+      <div class="col-sm-6">{{ tradeSetup.MiddleTrend }}</div>
+    </div>
+    <div class="row">
+      <h3>Short Trend</h3>
+      <div class="col-sm-6"></div>
+      <div class="col-sm-6">{{ tradeSetup.ShortTrendChart }}</div>
+    </div>
+    <div class="row">
+      <h3>Short Trend</h3>
+      <div class="col-sm-6"></div>
+      <div class="col-sm-6">{{ tradeSetup.FundamentalText }}</div>
+    </div>
+    <button (click)="save()">save</button>
+
+    </div>
+  </form>
+</div>

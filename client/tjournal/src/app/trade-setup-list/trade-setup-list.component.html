@@ -1,0 +1,21 @@
+<div style="text-align:center">
+  <h1>
+    Setups
+    <button [routerLink]="['/trade']" routerLinkActive="router-link-active" >Add</button>
+  </h1>
+  <table class="table table-stripped">
+    <thead>
+      <tr>
+        <td>Id</td>
+        <td>Ticker</td>
+        <td>Date</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let trade of tradeSetupList">
+        <td><a href="" [routerLink]="['/trade', trade.id]">{{trade.id}}</a></td>
+        <td>{{trade.Ticker}}</td>
+        <td>{{trade.Date}}</td>
+      </tr>
+    </tbody>
+  </table>
