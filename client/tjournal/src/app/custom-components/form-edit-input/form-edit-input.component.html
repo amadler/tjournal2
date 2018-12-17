@@ -1,10 +1,10 @@
 <div [formGroup]="group">
-<button (click)="editCancel()">close</button>
-<button (click)="save()">save</button>
-<input
+  <button (click)="editCancel()" class="btn btn-warn">close</button>
+  <button (click)="save()" class="btn btn-primary">save</button>
+  <input
 
-  class="form-control"
-  formControlName="ctrlName"
-  type= text
->
+    class="form-control"
+    [formControlName]="controlName"
+    type= text
+  >
 </div>

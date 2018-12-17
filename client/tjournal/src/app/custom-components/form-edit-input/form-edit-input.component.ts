@@ -7,7 +7,7 @@ import { Subject } from 'rxjs';
   styleUrls: ['./form-edit-input.component.scss']
 })
 export class FormEditInputComponent implements OnInit {
-  @Input() ctrlName;
+  @Input() controlName;
   @Input() group;
   @Output() saved$: EventEmitter<boolean> = new EventEmitter();
   @Output() canceled$: EventEmitter<boolean> = new EventEmitter();

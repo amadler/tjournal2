@@ -7,7 +7,7 @@ import { Component, OnInit, EventEmitter, Input, Output } from '@angular/core';
 })
 export class FormEditTextareaComponent implements OnInit {
 
-  @Input() ctrlName;
+  @Input() controlName;
   @Input() group;
   @Output() saved$: EventEmitter<boolean> = new EventEmitter();
   @Output() canceled$: EventEmitter<boolean> = new EventEmitter();

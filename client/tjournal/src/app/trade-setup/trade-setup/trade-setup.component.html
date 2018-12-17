@@ -2,35 +2,38 @@
   <form [formGroup]="TradeSetupForm">
   <div class="contaner-fluid">
       <div *ngIf="!isEdited; then: Ticker; else: TickerForm"></div>
-      <ng-template #Ticker>
-          <div class="col-sm-6">{{ tradeSetup.Ticker }}</div>
+        <ng-template #Ticker>
+          <h1>{{ tradeSetup.Ticker }}</h1>
         </ng-template>
         <ng-template #TickerForm>
           <div class="col-sm-6">
-            <app-form-edit-input (saved$)="save()" (canceled$)="editCancel()" [group]="TradeSetupForm" [ctrlName]="Ticker"></app-form-edit-input>
+            <app-form-edit-input (saved$)="save()" (canceled$)="editCancel()" [group]="TradeSetupForm" [controlName]="'Ticker'"></app-form-edit-input>
           </div>
         </ng-template>
-        <h1>{{ tradeSetup.Ticker }}</h1>
+
 
     <button (click)="edit()">Edit</button>
 
+    <h3>Long Trend</h3>
     <div class="row">
-      <h3>Long Trend</h3>
-      <div class="col-sm-6"></div>
-      <div *ngIf="!isEdited; then: LongTrend; else: LongTrendForm"></div>
-      <ng-template #LongTrend>
-        <div class="col-sm-6">{{ tradeSetup.LongTrend }}</div>
-      </ng-template>
-      <ng-template #LongTrendForm>
+      <div *ngIf="!isEdited; then: LongTrendNote; else: LongTrendNoteForm"></div>
+      <ng-template #LongTrendNote>
         <div class="col-sm-6">
-            <div class="col-sm-6">
-                <app-form-edit-textarea (saved$)="save()" (canceled$)="editCancel()" [group]="TradeSetupForm" [ctrlName]="LongTrend"></app-form-edit-textarea>
-              </div>
+          <img class="chart-medium" src="../../../assets/images/no-image.png">
+        </div>
+        <div class="col-sm-6">
+          {{ tradeSetup.LongTrend }}
+        </div>
+      </ng-template>
+      <ng-template #LongTrendNoteForm>
+        <div class="col-sm-6">
+            <app-form-edit-textarea (saved$)="save()" (canceled$)="editCancel()" [group]="TradeSetupForm" [controlName]="'LongTrend'"></app-form-edit-textarea>
         </div>
       </ng-template>
     </div>
+
+    <h3>Middle Trend</h3>
     <div class="row">
-      <h3>Middle Trend</h3>
       <div class="col-sm-6"></div>
       <div class="col-sm-6">{{ tradeSetup.MiddleTrend }}</div>
     </div>

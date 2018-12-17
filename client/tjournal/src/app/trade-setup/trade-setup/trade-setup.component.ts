@@ -39,12 +39,10 @@ export class TradeSetupComponent implements OnInit {
     console.log(this.TradeSetupForm.value);
     if (! this.TradeSetupForm.value['id'] ) {
       this.tradeSetupService.createTradeSetup(this.TradeSetupForm.value).subscribe((data) => {
-        console.log(data.id);
-        this.router.navigate(['/', data.id]);
+        this.router.navigate(['./trade/', data.id]);
       });
     } else {
       this.tradeSetupService.updateTradeSetup(this.TradeSetupForm.value, this.id).subscribe((data) => {
-        console.log(data);
       });
     }
 
