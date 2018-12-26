@@ -4,8 +4,7 @@ import { TradeSetupService } from '../trade-setup/trade-setup.service';
 
 @Component({
   selector: 'app-trade-setup-list',
-  templateUrl: './trade-setup-list.component.html',
-  styleUrls: ['./trade-setup-list.component.scss']
+  templateUrl: './trade-setup-list.component.html'
 })
 export class TradeSetupListComponent implements OnInit {
 

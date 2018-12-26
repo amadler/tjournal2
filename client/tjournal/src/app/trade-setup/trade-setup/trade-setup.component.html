@@ -1,54 +1,26 @@
-<div class="page-trade-setup " *ngIf="tradeSetup">
-  <form [formGroup]="TradeSetupForm">
-  <div class="contaner-fluid">
-      <div *ngIf="!isEdited; then: Ticker; else: TickerForm"></div>
-        <ng-template #Ticker>
-          <h1>{{ tradeSetup.Ticker }}</h1>
-        </ng-template>
-        <ng-template #TickerForm>
-          <div class="col-sm-6">
-            <app-form-edit-input (saved$)="save()" (canceled$)="editCancel()" [group]="TradeSetupForm" [controlName]="'Ticker'"></app-form-edit-input>
-          </div>
-        </ng-template>
-
-
-    <button (click)="edit()">Edit</button>
-
+<div class="container">
+  <div *ngIf="tradeSetup">
+    <a class="btn" [routerLink]="['/trades']"  ><i class="fas fa-long-arrow-alt-left"></i>Back</a>
+    <a [routerLink]="['./edit']"><i class="fas fa-pen"></i>Edit</a>
+    <h1>{{ tradeSetup.Ticker }}</h1>
     <h3>Long Trend</h3>
     <div class="row">
-      <div *ngIf="!isEdited; then: LongTrendNote; else: LongTrendNoteForm"></div>
-      <ng-template #LongTrendNote>
-        <div class="col-sm-6">
-          <img class="chart-medium" src="../../../assets/images/no-image.png">
-        </div>
-        <div class="col-sm-6">
-          {{ tradeSetup.LongTrend }}
-        </div>
-      </ng-template>
-      <ng-template #LongTrendNoteForm>
-        <div class="col-sm-6">
-            <app-form-edit-textarea (saved$)="save()" (canceled$)="editCancel()" [group]="TradeSetupForm" [controlName]="'LongTrend'"></app-form-edit-textarea>
-        </div>
-      </ng-template>
+      <div class="col-sm-5"><img class="chart-medium" src="../../../assets/images/no-image.png"></div>
+      <div class="col-sm-7">{{ tradeSetup.LongTrend }}</div>
     </div>
-
     <h3>Middle Trend</h3>
     <div class="row">
-      <div class="col-sm-6"></div>
-      <div class="col-sm-6">{{ tradeSetup.MiddleTrend }}</div>
+      <div class="col-sm-5"><img class="chart-medium" src="../../../assets/images/no-image.png"></div>
+      <div class="col-sm-7">{{ tradeSetup.MiddleTrend }}</div>
     </div>
+    <h3>Short Trend</h3>
     <div class="row">
-      <h3>Short Trend</h3>
-      <div class="col-sm-6"></div>
-      <div class="col-sm-6">{{ tradeSetup.ShortTrendChart }}</div>
+      <div class="col-sm-5"><img class="chart-medium" src="../../../assets/images/no-image.png"></div>
+      <div class="col-sm-7">{{ tradeSetup.ShortTrend }}</div>
     </div>
+    <h3>Fundamental Text</h3>
     <div class="row">
-      <h3>Short Trend</h3>
-      <div class="col-sm-6"></div>
-      <div class="col-sm-6">{{ tradeSetup.FundamentalText }}</div>
+      <div class="col-sm-12">{{ tradeSetup.FundamentalText }}</div>
     </div>
-    <button (click)="save()">save</button>
-
-    </div>
-  </form>
+  </div>
 </div>

@@ -1,8 +1,7 @@
 <div [formGroup]="group">
-    <button (click)="editCancel()" class="btn btn-warn">close</button>
-    <button (click)="save()" class="btn btn-primary">save</button>
     <textarea
       class="form-control"
       [formControlName]="controlName"
+      [value]="initialValue"
     ></textarea>
 </div>

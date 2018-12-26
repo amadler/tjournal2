@@ -1,0 +1,12 @@
+<div class="description-container">
+  <div *ngIf="isEdited then editMode; else viewMode"></div>
+  <ng-template #viewMode>
+    {{input}}
+    <button class="btn btn-primary" (click)="edit()">edit</button>
+  </ng-template>
+  <ng-template #editMode>
+    <button class="btn btn-primary" (click)="save()">save</button>
+    <button class="btn btn-warn"  (click)="editCancel()">cancel</button>
+    <app-form-edit-textarea (saved$)="save()" (canceled$)="editCancel()" [group]="group" [controlName]="controlName" [initialValue]="input"></app-form-edit-textarea>
+  </ng-template>
+</div>

@@ -1,0 +1,50 @@
+<div class="container">
+    <form [formGroup]="TradeSetupForm" (submit)="save()">
+        <div class="form-group">
+          <label for="Ticker">Ticker</label>
+          <input class="form-control" type="text" formControlName="Ticker" id="Ticker">
+        </div>
+        <h3>Long Trend</h3>
+        <div class="row">
+          <!-- TODO: implement image edit -->
+          <div class="col-sm-5"><img class="chart-medium" src="../../../assets/images/no-image.png"></div>
+          <div class="col-sm-7">
+            <div class="form-group">
+              <label for="LongTrend">LongTrend</label>
+              <textarea  class="form-control" type="text" formControlName="LongTrend"></textarea>
+            </div>
+          </div>
+        </div>
+        <h3>Middle Trend</h3>
+        <div class="row">
+          <div class="col-sm-5"><img class="chart-medium" src="../../../assets/images/no-image.png"></div>
+          <div class="col-sm-7">
+            <div class="form-group">
+                <label for="MiddleTrend">MiddleTrend</label>
+                <textarea class="form-control" type="text" formControlName="MiddleTrend"></textarea>
+            </div>
+          </div>
+        </div>
+        <h3>Short Trend</h3>
+        <div class="row">
+          <div class="col-sm-5"><img class="chart-medium" src="../../../assets/images/no-image.png"></div>
+          <div class="col-sm-7">
+            <div class="form-group">
+                <label for="ShortTrendChart">ShortTrend</label>
+                <textarea class="form-control" type="text" formControlName="ShortTrend"></textarea>
+            </div>
+          </div>
+        </div>
+        <h3>Fundamental Text</h3>
+        <div class="row">
+            <div class="col-sm-12">
+              <div class="form-group">
+                  <label for="FundamentalText">FundamentalText</label>
+                  <textarea class="form-control" type="text" formControlName="FundamentalText"></textarea>
+              </div>
+            </div>
+        </div>
+      <button class="btn" type="submit">Save</button>
+      <button class="btn" type="button" (click)="addCancel()">Cancel</button>
+    </form>
+  </div>
