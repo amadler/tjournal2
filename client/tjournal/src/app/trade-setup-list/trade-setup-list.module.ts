@@ -10,7 +10,7 @@ import { RouterModule } from '@angular/router';
     CommonModule,
     RouterModule
   ],
-  exports:[TradeSetupListComponent],
-  providers:[TradeSetupService]
+  exports: [TradeSetupListComponent],
+  providers: [TradeSetupService]
 })
 export class TradeSetupListModule { }

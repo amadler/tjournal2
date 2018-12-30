@@ -12,5 +12,13 @@
     "name": "mongoDS",
     "user": "",
     "connector": "mongodb"
+  },
+  "filestore-mongo": {
+    "host": "localhost",
+    "port": 27017,
+    "database": "tjournal2",
+    "name": "filestore-mongo",
+    "provider": "filestore-mongo",
+    "connector": "loopback-component-storage-mongo"
   }
 }

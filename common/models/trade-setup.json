@@ -8,11 +8,9 @@
   "properties": {
     "Ticker": {
       "type": "string"
-
     },
     "Date": {
       "type": "date"
-
     },
     "LongTrend": {
       "type": "string"

@@ -41,5 +41,9 @@
   "tradeSetup": {
     "dataSource": "mongoDS",
     "public": true
+  },
+  "Container": {
+    "dataSource": "filestore-mongo",
+    "public": true
   }
 }
